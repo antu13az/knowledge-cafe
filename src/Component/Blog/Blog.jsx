@@ -40,7 +40,7 @@ const Blog = ({ blog,handleAddBookmark }) => {
           ))}
         </div>
       </div>
-      <button className="mt-[21px] underline text-[#6047EC] font-bold">
+      <button className="mt-[21px] underline text-[#6047EC] font-">
         make as read
       </button>
     </div>
