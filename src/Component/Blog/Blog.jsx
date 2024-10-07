@@ -14,7 +14,7 @@ const Blog = ({ blog }) => {
 
   // const {}= blog
   return (
-    <div className="singleBlogContainer mb-[75px]">
+    <div className="singleBlogContainer mb-[75px] border-b-[3px] pb-[5px] border-sky-800">
       <img className="w-full" src={cover} alt="" />
       <div className="flex justify-between items-center">
         <div className="flex items-center gap-3 justify-between mt-[32px]">
@@ -39,7 +39,7 @@ const Blog = ({ blog }) => {
         ))}
         </p>
       </div>
-      <button className="mt-[21px]">make as read</button>
+      <button className="mt-[21px] underline text-[#6047EC] font-bold">make as read</button>
     </div>
   );
 };
