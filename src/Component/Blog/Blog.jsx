@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import { CiBookmark } from "react-icons/ci";
-const Blog = ({ blog }) => {
-  console.log(blog);
+const Blog = ({ blog,handleAddBookmark }) => {
+  // console.log(blog);
   const {
     author,
     cover,
@@ -21,29 +21,33 @@ const Blog = ({ blog }) => {
           <img className="w-[60px] h-[60px]" src={author_img} alt="" />
           <div>
             <p className="text-[24px] font-[700] ">{author}</p>
-            <p className="text-[#707070] text-[16px]">
-              {posted_date} 
-            </p>
+            <p className="text-[#707070] text-[16px]">{posted_date}</p>
           </div>
         </div>
 
-        <p className="text-[#707070] text-[20px] flex items-center gap-2">
-          {reading_time} minutes read <CiBookmark />{" "}
-        </p>
+        <div className="text-[#707070] text-[20px] flex items-center gap-2">
+          <p>{reading_time} minutes read</p>
+          <button onClick={()=>handleAddBookmark(blog)}>
+            <CiBookmark />
+          </button>
+        </div>
       </div>
       <div>
         <h1 className="text-[40px] font-[700]">{title}</h1>
-        <p className="flex items-center gap-3 text-[#707070] font-[700]">
-        {hashtags.map((hashtag, index) => (
-          <p key={index}>#{hashtag}</p>
-        ))}
-        </p>
+        <div className="flex items-center gap-3 text-[#707070] font-[700]">
+          {hashtags.map((hashtag, index) => (
+            <p key={index}>#{hashtag}</p>
+          ))}
+        </div>
       </div>
-      <button className="mt-[21px] underline text-[#6047EC] font-bold">make as read</button>
+      <button className="mt-[21px] underline text-[#6047EC] font-bold">
+        make as read
+      </button>
     </div>
   );
 };
 Blog.propTypes = {
   blog: PropTypes.object.isRequired,
+  handleAddBookmark:PropTypes.func.isRequired
 };
 export default Blog;
