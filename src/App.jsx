@@ -7,7 +7,6 @@ import Footer from "./Footer/Footer";
 function App() {
   const [addBookmark, setAddBookmark] = useState([]);
   const [addTime, setAddTime] = useState(0);
-  // console.log(addTime)
   const handleAddBookmark = (bookmark) => {
     const newBookmarks = [...addBookmark, bookmark];
     setAddBookmark(newBookmarks);
